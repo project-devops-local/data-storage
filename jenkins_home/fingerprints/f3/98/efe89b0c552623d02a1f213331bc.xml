@@ -1,0 +1,13 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2022-02-08 16:56:23.707 UTC</timestamp>
+  <md5sum>f398efe89b0c552623d02a1f213331bc</md5sum>
+  <fileName>Credential id=ugithub name=ugithub/****** (credenciales nexus)</fileName>
+  <usages>
+    <entry>
+      <string>Unico/unico-old-bd</string>
+      <ranges>1-11,16,22-27</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

@@ -1,0 +1,690 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.8">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.93">
+    <parentIds>
+      <string>8</string>
+    </parentIds>
+    <id>9</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.multibranch.JobPropertyStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.93">
+      <arguments>
+        <entry>
+          <string>properties</string>
+          <list>
+            <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable plugin="structs@1.23">
+              <symbol>parameters</symbol>
+              <arguments class="linked-hash-map">
+                <entry>
+                  <string>&lt;anonymous&gt;</string>
+                  <list>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>BooleanParameterDefinition</string>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <boolean>false</boolean>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string>Opcional</string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>Refresh_Parameters</string>
+                      </entry>
+                    </linked-hash-map>
+                    <tree-map>
+                      <entry>
+                        <string>choices</string>
+                        <list>
+                          <string>QA159</string>
+                          <string>QA222</string>
+                          <string>QA221</string>
+                          <string>QA81</string>
+                          <string>QA82</string>
+                          <string>QA68</string>
+                          <string>QA104</string>
+                          <string>QA99</string>
+                        </list>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <string></string>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string>PT Deploy</string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>PT_Deploy</string>
+                      </entry>
+                    </tree-map>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>BooleanParameterDefinition</string>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <boolean>false</boolean>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string>Script de cambio</string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>DobleExecute</string>
+                      </entry>
+                    </linked-hash-map>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>BooleanParameterDefinition</string>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <boolean>false</boolean>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string>¿Validar logs despuesde todas las ejecuciones?</string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>validarLogsPostEjecuciones</string>
+                      </entry>
+                    </linked-hash-map>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>WHideParameterDefinition</string>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <string>Compensación y Conciliación</string>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string></string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>mon_plataforma</string>
+                      </entry>
+                    </linked-hash-map>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>WHideParameterDefinition</string>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <string>C3 (Centro de Computo)</string>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string></string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>mon_aplicacion</string>
+                      </entry>
+                    </linked-hash-map>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>WHideParameterDefinition</string>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <string>CD</string>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string></string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>mon_practica</string>
+                      </entry>
+                    </linked-hash-map>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>WHideParameterDefinition</string>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <string>DB</string>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string></string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>mon_tipo</string>
+                      </entry>
+                    </linked-hash-map>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>WHideParameterDefinition</string>
+                      </entry>
+                      <entry>
+                        <string>defaultValue</string>
+                        <string>QA</string>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string></string>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>mon_ambiente</string>
+                      </entry>
+                    </linked-hash-map>
+                    <linked-hash-map>
+                      <entry>
+                        <string>$class</string>
+                        <string>ChoiceParameter</string>
+                      </entry>
+                      <entry>
+                        <string>choiceType</string>
+                        <string>PT_SINGLE_SELECT</string>
+                      </entry>
+                      <entry>
+                        <string>description</string>
+                        <string></string>
+                      </entry>
+                      <entry>
+                        <string>filterLength</string>
+                        <int>1</int>
+                      </entry>
+                      <entry>
+                        <string>filterable</string>
+                        <boolean>true</boolean>
+                      </entry>
+                      <entry>
+                        <string>name</string>
+                        <string>C3_bd</string>
+                      </entry>
+                      <entry>
+                        <string>randomName</string>
+                        <string>UNC</string>
+                      </entry>
+                      <entry>
+                        <string>script</string>
+                        <linked-hash-map>
+                          <entry>
+                            <string>$class</string>
+                            <string>GroovyScript</string>
+                          </entry>
+                          <entry>
+                            <string>fallbackScript</string>
+                            <linked-hash-map>
+                              <entry>
+                                <string>classpath</string>
+                                <list/>
+                              </entry>
+                              <entry>
+                                <string>sandbox</string>
+                                <boolean>false</boolean>
+                              </entry>
+                              <entry>
+                                <string>script</string>
+                                <string></string>
+                              </entry>
+                            </linked-hash-map>
+                          </entry>
+                          <entry>
+                            <string>script</string>
+                            <linked-hash-map>
+                              <entry>
+                                <string>classpath</string>
+                                <list/>
+                              </entry>
+                              <entry>
+                                <string>sandbox</string>
+                                <boolean>false</boolean>
+                              </entry>
+                              <entry>
+                                <string>script</string>
+                                <wf.a.ArgumentsAction_-NotStoredReason>OVERSIZE_VALUE</wf.a.ArgumentsAction_-NotStoredReason>
+                              </entry>
+                            </linked-hash-map>
+                          </entry>
+                        </linked-hash-map>
+                      </entry>
+                    </linked-hash-map>
+                  </list>
+                </entry>
+              </arguments>
+            </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+          </list>
+        </entry>
+      </arguments>
+      <sensitiveVariables/>
+      <isUnmodifiedBySanitization>false</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.46">
+      <startTime>1644339502504</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+    <wf.a.ErrorAction plugin="workflow-api@2.46">
+      <error class="java.lang.IllegalArgumentException">
+        <detailMessage>Could not instantiate {properties=[@parameters(&lt;anonymous&gt;=[{$class=BooleanParameterDefinition, defaultValue=false, description=Opcional, name=Refresh_Parameters}, @choice(choices=[QA159, QA222, QA221, QA81, QA82, QA68, QA104, QA99],defaultValue=,description=PT Deploy,name=PT_Deploy), {$class=BooleanParameterDefinition, defaultValue=false, description=Script de cambio, name=DobleExecute}, {$class=BooleanParameterDefinition, defaultValue=false, description=¿Validar logs despuesde todas las ejecuciones?, name=validarLogsPostEjecuciones}, {$class=WHideParameterDefinition, defaultValue=Compensación y Conciliación, description=, name=mon_plataforma}, {$class=WHideParameterDefinition, defaultValue=C3 (Centro de Computo), description=, name=mon_aplicacion}, {$class=WHideParameterDefinition, defaultValue=CD, description=, name=mon_practica}, {$class=WHideParameterDefinition, defaultValue=DB, description=, name=mon_tipo}, {$class=WHideParameterDefinition, defaultValue=QA, description=, name=mon_ambiente}, {$class=ChoiceParameter, choiceType=PT_SINGLE_SELECT, description=, filterLength=1, filterable=true, name=C3_bd, randomName=UNC, script={$class=GroovyScript, fallbackScript={classpath=[], sandbox=false, script=}, script={classpath=[], sandbox=false, script=
+import groovy.json.JsonSlurper
+import groovy.transform.Field
+import jenkins.model.*
+@Field def token=&quot;&quot;
+@Field def nexusResponse = [:]
+def responseList = []
+responseList.add(&apos;00_ZERO&apos;)
+while(token!=null){
+    request()
+  for(int i=0; i &lt; nexusResponse.items.size();i++){
+        if(nexusResponse.items[i].group.toString().equals(&apos;QA&apos;)){
+              responseList.add(nexusResponse.items[i].version.toString())
+
+        }
+  }
+
+}
+    return responseList.sort()
+def request(){
+    if(token==&quot;&quot;){
+        urlNexusArtifactory = &quot;http://10.130.2.30:8081//service/rest/v1/search?sort=&amp;repository=maven-c3-bd-release&amp;name=C3_bd&quot;
+    }else{
+        urlNexusArtifactory = &quot;http://10.130.2.30:8081//service/rest/v1/search?continuationToken=&quot;+token+&quot;&amp;sort=&amp;repository=maven-c3-bd-release&amp;name=C3_bd&quot;
+    }
+    try {
+         credentialsId = &apos;ugithub&apos;
+        def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class, Jenkins.instance, null, null ).find{
+        it.id == credentialsId}
+        String userpass = creds.username.toString() + &apos;:&apos; + creds.password.toString();
+        String basicAuth = &quot;Basic &quot; + new String(Base64.getEncoder().encode(userpass.getBytes()));
+        def http_client = new URL(urlNexusArtifactory).openConnection() as HttpURLConnection
+        http_client.setRequestProperty(&quot;Authorization&quot;, basicAuth);
+        http_client.setRequestMethod(&quot;GET&quot;);
+        http_client.connect();
+
+        if (http_client.responseCode == 200) {
+            nexusResponse = new JsonSlurper().parseText(http_client.inputStream.getText(&apos;UTF-8&apos;))
+        } else {
+            println(&quot;HTTP response error&quot;)
+            System.exit(0)
+        }
+        if(nexusResponse.continuationToken==&quot;null&quot;){
+            token=&quot;null&quot;
+
+        }else{
+            token=nexusResponse.continuationToken
+        }
+    }catch (Exception e) {
+        println(e)
+    }
+}}}}])]} for org.jenkinsci.plugins.workflow.multibranch.JobPropertyStep: java.lang.IllegalArgumentException: Could not instantiate {parameterDefinitions=[{$class=BooleanParameterDefinition, defaultValue=false, description=Opcional, name=Refresh_Parameters}, @choice(choices=[QA159, QA222, QA221, QA81, QA82, QA68, QA104, QA99],defaultValue=,description=PT Deploy,name=PT_Deploy), {$class=BooleanParameterDefinition, defaultValue=false, description=Script de cambio, name=DobleExecute}, {$class=BooleanParameterDefinition, defaultValue=false, description=¿Validar logs despuesde todas las ejecuciones?, name=validarLogsPostEjecuciones}, {$class=WHideParameterDefinition, defaultValue=Compensación y Conciliación, description=, name=mon_plataforma}, {$class=WHideParameterDefinition, defaultValue=C3 (Centro de Computo), description=, name=mon_aplicacion}, {$class=WHideParameterDefinition, defaultValue=CD, description=, name=mon_practica}, {$class=WHideParameterDefinition, defaultValue=DB, description=, name=mon_tipo}, {$class=WHideParameterDefinition, defaultValue=QA, description=, name=mon_ambiente}, {$class=ChoiceParameter, choiceType=PT_SINGLE_SELECT, description=, filterLength=1, filterable=true, name=C3_bd, randomName=UNC, script={$class=GroovyScript, fallbackScript={classpath=[], sandbox=false, script=}, script={classpath=[], sandbox=false, script=
+import groovy.json.JsonSlurper
+import groovy.transform.Field
+import jenkins.model.*
+@Field def token=&quot;&quot;
+@Field def nexusResponse = [:]
+def responseList = []
+responseList.add(&apos;00_ZERO&apos;)
+while(token!=null){
+    request()
+  for(int i=0; i &lt; nexusResponse.items.size();i++){
+        if(nexusResponse.items[i].group.toString().equals(&apos;QA&apos;)){
+              responseList.add(nexusResponse.items[i].version.toString())
+
+        }
+  }
+
+}
+    return responseList.sort()
+def request(){
+    if(token==&quot;&quot;){
+        urlNexusArtifactory = &quot;http://10.130.2.30:8081//service/rest/v1/search?sort=&amp;repository=maven-c3-bd-release&amp;name=C3_bd&quot;
+    }else{
+        urlNexusArtifactory = &quot;http://10.130.2.30:8081//service/rest/v1/search?continuationToken=&quot;+token+&quot;&amp;sort=&amp;repository=maven-c3-bd-release&amp;name=C3_bd&quot;
+    }
+    try {
+         credentialsId = &apos;ugithub&apos;
+        def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class, Jenkins.instance, null, null ).find{
+        it.id == credentialsId}
+        String userpass = creds.username.toString() + &apos;:&apos; + creds.password.toString();
+        String basicAuth = &quot;Basic &quot; + new String(Base64.getEncoder().encode(userpass.getBytes()));
+        def http_client = new URL(urlNexusArtifactory).openConnection() as HttpURLConnection
+        http_client.setRequestProperty(&quot;Authorization&quot;, basicAuth);
+        http_client.setRequestMethod(&quot;GET&quot;);
+        http_client.connect();
+
+        if (http_client.responseCode == 200) {
+            nexusResponse = new JsonSlurper().parseText(http_client.inputStream.getText(&apos;UTF-8&apos;))
+        } else {
+            println(&quot;HTTP response error&quot;)
+            System.exit(0)
+        }
+        if(nexusResponse.continuationToken==&quot;null&quot;){
+            token=&quot;null&quot;
+
+        }else{
+            token=nexusResponse.continuationToken
+        }
+    }catch (Exception e) {
+        println(e)
+    }
+}}}}]} for hudson.model.ParametersDefinitionProperty: java.lang.UnsupportedOperationException: no known implementation of class hudson.model.ParameterDefinition is named WHideParameterDefinition</detailMessage>
+        <cause class="java.lang.IllegalArgumentException">
+          <detailMessage>Could not instantiate {parameterDefinitions=[{$class=BooleanParameterDefinition, defaultValue=false, description=Opcional, name=Refresh_Parameters}, @choice(choices=[QA159, QA222, QA221, QA81, QA82, QA68, QA104, QA99],defaultValue=,description=PT Deploy,name=PT_Deploy), {$class=BooleanParameterDefinition, defaultValue=false, description=Script de cambio, name=DobleExecute}, {$class=BooleanParameterDefinition, defaultValue=false, description=¿Validar logs despuesde todas las ejecuciones?, name=validarLogsPostEjecuciones}, {$class=WHideParameterDefinition, defaultValue=Compensación y Conciliación, description=, name=mon_plataforma}, {$class=WHideParameterDefinition, defaultValue=C3 (Centro de Computo), description=, name=mon_aplicacion}, {$class=WHideParameterDefinition, defaultValue=CD, description=, name=mon_practica}, {$class=WHideParameterDefinition, defaultValue=DB, description=, name=mon_tipo}, {$class=WHideParameterDefinition, defaultValue=QA, description=, name=mon_ambiente}, {$class=ChoiceParameter, choiceType=PT_SINGLE_SELECT, description=, filterLength=1, filterable=true, name=C3_bd, randomName=UNC, script={$class=GroovyScript, fallbackScript={classpath=[], sandbox=false, script=}, script={classpath=[], sandbox=false, script=
+import groovy.json.JsonSlurper
+import groovy.transform.Field
+import jenkins.model.*
+@Field def token=&quot;&quot;
+@Field def nexusResponse = [:]
+def responseList = []
+responseList.add(&apos;00_ZERO&apos;)
+while(token!=null){
+    request()
+  for(int i=0; i &lt; nexusResponse.items.size();i++){
+        if(nexusResponse.items[i].group.toString().equals(&apos;QA&apos;)){
+              responseList.add(nexusResponse.items[i].version.toString())
+
+        }
+  }
+
+}
+    return responseList.sort()
+def request(){
+    if(token==&quot;&quot;){
+        urlNexusArtifactory = &quot;http://10.130.2.30:8081//service/rest/v1/search?sort=&amp;repository=maven-c3-bd-release&amp;name=C3_bd&quot;
+    }else{
+        urlNexusArtifactory = &quot;http://10.130.2.30:8081//service/rest/v1/search?continuationToken=&quot;+token+&quot;&amp;sort=&amp;repository=maven-c3-bd-release&amp;name=C3_bd&quot;
+    }
+    try {
+         credentialsId = &apos;ugithub&apos;
+        def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class, Jenkins.instance, null, null ).find{
+        it.id == credentialsId}
+        String userpass = creds.username.toString() + &apos;:&apos; + creds.password.toString();
+        String basicAuth = &quot;Basic &quot; + new String(Base64.getEncoder().encode(userpass.getBytes()));
+        def http_client = new URL(urlNexusArtifactory).openConnection() as HttpURLConnection
+        http_client.setRequestProperty(&quot;Authorization&quot;, basicAuth);
+        http_client.setRequestMethod(&quot;GET&quot;);
+        http_client.connect();
+
+        if (http_client.responseCode == 200) {
+            nexusResponse = new JsonSlurper().parseText(http_client.inputStream.getText(&apos;UTF-8&apos;))
+        } else {
+            println(&quot;HTTP response error&quot;)
+            System.exit(0)
+        }
+        if(nexusResponse.continuationToken==&quot;null&quot;){
+            token=&quot;null&quot;
+
+        }else{
+            token=nexusResponse.continuationToken
+        }
+    }catch (Exception e) {
+        println(e)
+    }
+}}}}]} for hudson.model.ParametersDefinitionProperty: java.lang.UnsupportedOperationException: no known implementation of class hudson.model.ParameterDefinition is named WHideParameterDefinition</detailMessage>
+          <cause class="java.lang.UnsupportedOperationException">
+            <detailMessage>no known implementation of class hudson.model.ParameterDefinition is named WHideParameterDefinition</detailMessage>
+            <stackTrace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.resolveClass(DescribableModel.java:549)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerce(DescribableModel.java:473)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerceList(DescribableModel.java:585)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerce(DescribableModel.java:458)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.buildArguments(DescribableModel.java:409)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.instantiate(DescribableModel.java:329)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable.instantiate(UninstantiatedDescribable.java:208)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerce(DescribableModel.java:466)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerceList(DescribableModel.java:585)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerce(DescribableModel.java:458)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.buildArguments(DescribableModel.java:409)</trace>
+              <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.instantiate(DescribableModel.java:329)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeStep(DSL.java:302)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeMethod(DSL.java:193)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.CpsScript.invokeMethod(CpsScript.java:122)</trace>
+              <trace>jdk.internal.reflect.GeneratedMethodAccessor453.invoke(Unknown Source)</trace>
+              <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+              <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+              <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+              <trace>groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)</trace>
+              <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)</trace>
+              <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)</trace>
+              <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:42)</trace>
+              <trace>org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)</trace>
+              <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)</trace>
+              <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:163)</trace>
+              <trace>org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)</trace>
+              <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:158)</trace>
+              <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:161)</trace>
+              <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:165)</trace>
+              <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:135)</trace>
+              <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:86)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)</trace>
+              <trace>jdk.internal.reflect.GeneratedMethodAccessor168.invoke(Unknown Source)</trace>
+              <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+              <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.dispatch(CollectionLiteralBlock.java:55)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.item(CollectionLiteralBlock.java:45)</trace>
+              <trace>jdk.internal.reflect.GeneratedMethodAccessor241.invoke(Unknown Source)</trace>
+              <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+              <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:89)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)</trace>
+              <trace>jdk.internal.reflect.GeneratedMethodAccessor168.invoke(Unknown Source)</trace>
+              <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+              <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:76)</trace>
+              <trace>com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:66)</trace>
+              <trace>jdk.internal.reflect.GeneratedMethodAccessor172.invoke(Unknown Source)</trace>
+              <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+              <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+              <trace>com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)</trace>
+              <trace>com.cloudbees.groovy.cps.Next.step(Next.java:83)</trace>
+              <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)</trace>
+              <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)</trace>
+              <trace>org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:129)</trace>
+              <trace>org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:268)</trace>
+              <trace>com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:163)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:18)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:51)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:185)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:400)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.access$400(CpsThreadGroup.java:96)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:312)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:276)</trace>
+              <trace>org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$2.call(CpsVmExecutorService.java:67)</trace>
+              <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+              <trace>hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:139)</trace>
+              <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+              <trace>jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:68)</trace>
+              <trace>java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)</trace>
+              <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+              <trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)</trace>
+              <trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)</trace>
+              <trace>java.base/java.lang.Thread.run(Thread.java:829)</trace>
+            </stackTrace>
+            <suppressedExceptions class="empty-list"/>
+          </cause>
+          <stackTrace>
+            <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.instantiate(DescribableModel.java:334)</trace>
+            <trace>org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable.instantiate(UninstantiatedDescribable.java:208)</trace>
+            <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerce(DescribableModel.java:466)</trace>
+            <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerceList(DescribableModel.java:585)</trace>
+            <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.coerce(DescribableModel.java:458)</trace>
+            <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.buildArguments(DescribableModel.java:409)</trace>
+            <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.instantiate(DescribableModel.java:329)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeStep(DSL.java:302)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeMethod(DSL.java:193)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsScript.invokeMethod(CpsScript.java:122)</trace>
+            <trace>jdk.internal.reflect.GeneratedMethodAccessor453.invoke(Unknown Source)</trace>
+            <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+            <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+            <trace>groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)</trace>
+            <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)</trace>
+            <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)</trace>
+            <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:42)</trace>
+            <trace>org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)</trace>
+            <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)</trace>
+            <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:163)</trace>
+            <trace>org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)</trace>
+            <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:158)</trace>
+            <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:161)</trace>
+            <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:165)</trace>
+            <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:135)</trace>
+            <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:86)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)</trace>
+            <trace>jdk.internal.reflect.GeneratedMethodAccessor168.invoke(Unknown Source)</trace>
+            <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.dispatch(CollectionLiteralBlock.java:55)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.item(CollectionLiteralBlock.java:45)</trace>
+            <trace>jdk.internal.reflect.GeneratedMethodAccessor241.invoke(Unknown Source)</trace>
+            <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:89)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)</trace>
+            <trace>jdk.internal.reflect.GeneratedMethodAccessor168.invoke(Unknown Source)</trace>
+            <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:76)</trace>
+            <trace>com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:66)</trace>
+            <trace>jdk.internal.reflect.GeneratedMethodAccessor172.invoke(Unknown Source)</trace>
+            <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)</trace>
+            <trace>com.cloudbees.groovy.cps.Next.step(Next.java:83)</trace>
+            <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)</trace>
+            <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)</trace>
+            <trace>org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:129)</trace>
+            <trace>org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:268)</trace>
+            <trace>com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:163)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:18)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:51)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:185)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:400)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.access$400(CpsThreadGroup.java:96)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:312)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:276)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$2.call(CpsVmExecutorService.java:67)</trace>
+            <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+            <trace>hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:139)</trace>
+            <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+            <trace>jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:68)</trace>
+            <trace>java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)</trace>
+            <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+            <trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)</trace>
+            <trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)</trace>
+            <trace>java.base/java.lang.Thread.run(Thread.java:829)</trace>
+          </stackTrace>
+          <suppressedExceptions class="empty-list"/>
+        </cause>
+        <stackTrace>
+          <trace>org.jenkinsci.plugins.structs.describable.DescribableModel.instantiate(DescribableModel.java:334)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeStep(DSL.java:302)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeMethod(DSL.java:193)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsScript.invokeMethod(CpsScript.java:122)</trace>
+          <trace>jdk.internal.reflect.GeneratedMethodAccessor453.invoke(Unknown Source)</trace>
+          <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+          <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+          <trace>groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)</trace>
+          <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)</trace>
+          <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:42)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:163)</trace>
+          <trace>org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)</trace>
+          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:158)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:161)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:165)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:135)</trace>
+          <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:86)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)</trace>
+          <trace>jdk.internal.reflect.GeneratedMethodAccessor168.invoke(Unknown Source)</trace>
+          <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.dispatch(CollectionLiteralBlock.java:55)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.item(CollectionLiteralBlock.java:45)</trace>
+          <trace>jdk.internal.reflect.GeneratedMethodAccessor241.invoke(Unknown Source)</trace>
+          <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:89)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)</trace>
+          <trace>jdk.internal.reflect.GeneratedMethodAccessor168.invoke(Unknown Source)</trace>
+          <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:76)</trace>
+          <trace>com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:66)</trace>
+          <trace>jdk.internal.reflect.GeneratedMethodAccessor172.invoke(Unknown Source)</trace>
+          <trace>java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.base/java.lang.reflect.Method.invoke(Method.java:566)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)</trace>
+          <trace>com.cloudbees.groovy.cps.Next.step(Next.java:83)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)</trace>
+          <trace>org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:129)</trace>
+          <trace>org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:268)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:163)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:18)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:51)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:185)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:400)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.access$400(CpsThreadGroup.java:96)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:312)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:276)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$2.call(CpsVmExecutorService.java:67)</trace>
+          <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+          <trace>hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:139)</trace>
+          <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+          <trace>jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:68)</trace>
+          <trace>java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)</trace>
+          <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+          <trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)</trace>
+          <trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)</trace>
+          <trace>java.base/java.lang.Thread.run(Thread.java:829)</trace>
+        </stackTrace>
+        <suppressedExceptions class="empty-list"/>
+      </error>
+    </wf.a.ErrorAction>
+  </actions>
+</Tag>

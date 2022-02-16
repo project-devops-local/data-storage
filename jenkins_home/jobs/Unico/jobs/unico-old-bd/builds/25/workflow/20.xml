@@ -1,0 +1,32 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.8">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.93">
+    <parentIds>
+      <string>19</string>
+    </parentIds>
+    <id>20</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.steps.durable_task.ShellStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.93">
+      <arguments>
+        <entry>
+          <string>script</string>
+          <string>curl -X GET -u ${USERNAME}:${PASSWORD} ${urlNexus}/repository/maven-c3-bd-release/QA/C3_bd/${C3_bd}/C3_bd-${C3_bd}.zip -O</string>
+        </entry>
+        <entry>
+          <string>label</string>
+          <string></string>
+        </entry>
+      </arguments>
+      <sensitiveVariables>
+        <string>PASSWORD</string>
+      </sensitiveVariables>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@1136.v7f5f1759dc16">
+      <startTime>1644348286144</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+  </actions>
+</Tag>

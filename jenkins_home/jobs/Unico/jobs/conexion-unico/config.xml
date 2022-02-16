@@ -1,0 +1,54 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.41">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@1.9.1"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@1.9.1">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.93">
+    <script>import groovy.transform.Field
+import groovy.json.JsonSlurper
+import java.io.IOException
+import java.util.Arrays
+import java.util.ArrayList
+import java.util.Collections
+import java.util.Iterator
+import java.util.List
+
+@Field def db_server = &apos;10.130.2.80,1433&apos;
+
+pipeline {
+    agent { label &apos;master&apos; }
+    environment {
+        PATH = &quot;$PATH:/opt/mssql-tools/bin&quot;
+    }
+    stages {
+        stage(&apos;Hello&apos;) {
+            steps {
+                script {
+                    sql()
+                }
+            }
+        }
+    }
+}
+
+def sql() {
+    withCredentials([usernamePassword(credentialsId: &apos;unico-bd-pt&apos;, usernameVariable: &apos;USERNAME&apos;, passwordVariable: &apos;PASSWORD&apos;)]) {
+        // sh &quot;/opt/mssql-tools/bin/sqlcmd -U ${USERNAME} -P ${PASSWORD} -S ${db_server} -i ${scriptName} -f 65001 |tee -a ${scriptName}.log&quot;
+        sh &quot;sqlcmd -U ${USERNAME} -P ${PASSWORD} -S ${db_server} -Q &apos;SELECT ABS(-1.0), ABS(0.0), ABS(1.0);&apos;&quot;
+    }
+}
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

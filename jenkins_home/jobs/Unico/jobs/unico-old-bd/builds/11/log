@@ -1,0 +1,123 @@
+Started by user unknown or anonymous
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4CCz6q0bQfRpkLBTyPowKOBGVpMjm4dyx8Zz0BbyuEaIAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4Fp2pHJMxiNt7r6AgdsMAYZXP5wQXGjoo38R5VBfHRdJAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4K6fA9AsqUpSd6J1ZuqV27WnTUW9KHrTnd3KT7tClYajAAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/jenkins_home/workspace/Unico/unico-old-bd
+[8mha:////4GBU7i4G1vMEG6+I46+HtftTXS1KWLAvr0erX0Wo7yJyAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4FhbzNQ1H43ATVYPElWsgjpurCGPiiYS0FtCj5uT6jYwAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] withCredentials
+Masking supported pattern matches of $passNexus
+[8mha:////4OUytSgCwVmUuvwz5mNJFy08FbOPW7DE/MnszRqG1gldAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] {
+[8mha:////4KYdIe974NT2WeO4focrt4hfLJ79C8E3pVkdxJZoVvQbAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzDEWYIfa/QeSFDiovAAAAA==[0m[Pipeline] }
+[8mha:////4Mwn/DQjDt0pd7Mbnda//oaox+UZPgboS4tfcTSPRs9/AAAAox+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbmZgYK1tC4wmQRYQl/7PAult5Iq/mHSRuYuUkk8yb5r3esM4JTpQs9wZ7h1k7HsNo6+ITpf4WaOKerlwTZgqGSzNJ6sx5QUnFwBLWwErAxqAOlB3aAlvh1UO1QaFtLyXV7yigcd0AT2CimotK5Qtzgt197DLhz/NXAHOMBdihdv8B+dJhs7wAAAA=[0m[Pipeline] // withCredentials
+[8mha:////4K4NchV/aZyHy1KY17KmgXt5xf6yzRU8ITcrQYYhJ2spAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTb2BhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI4F2L72ED9lYOJdvAAAAA==[0m[Pipeline] properties
+WARNING: Unknown parameter(s) found for class type 'hudson.model.ChoiceParameterDefinition': defaultValue
+[8mha:////4Np3KIvMk4epcm1BkLCW9P/xO3RjY3ExRcwPxotIVeqfAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIBiQ5R0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYO0G2F+S7bfcBVVhdU70AAAA=[0m[Pipeline] error
+[8mha:////4NoleCVO3tZmsz5DcFZro90aDPaDBGcw6mBdGwlGO756AAAAox+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6KExM04uTYsfkGFWgvNe9g+hMkv8tf8B4kkTt7pnrOc1xvrFHHk6FRrqfOUaq/6MLj5qZFjdw08qpYvqmZKHKyq7FhxY08LViwWy7IcK42NpTpw8uQEW92ahymCIVecJc7uoJH75o4nMj2XxUT5whSxuw1NYvp1/gYw9b0gL0tBtv8ANQIl770AAAA=[0m[Pipeline] }
+[8mha:////4O5/HMfPNYiAKCKANDUgHGzsxa4O+zYTdQv67Lt8PN15AAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRUCIqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBj1wny7U6Q7T9G7eE2vQAAAA==[0m[Pipeline] // node
+[8mha:////4LIlKUnAQoHiKsXuo8bbJ1brwfv5GWbU4qRCwzTzRthqAAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRUCIqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBj1wny7V6Q7T5g9IZ8vQAAAA==[0m[Pipeline] End of Pipeline
+ERROR: java.lang.IllegalArgumentException: Could not instantiate {properties=[@parameters(<anonymous>=[{$class=BooleanParameterDefinition, defaultValue=false, description=Opcional, name=Refresh_Parameters}, @choice(choices=[QA159, QA222, QA221, QA81, QA82, QA68, QA104, QA99],defaultValue=,description=PT Deploy,name=PT_Deploy), {$class=BooleanParameterDefinition, defaultValue=false, description=Script de cambio, name=DobleExecute}, {$class=BooleanParameterDefinition, defaultValue=false, description=¿Validar logs despuesde todas las ejecuciones?, name=validarLogsPostEjecuciones}, {$class=WHideParameterDefinition, defaultValue=Compensación y Conciliación, description=, name=mon_plataforma}, {$class=WHideParameterDefinition, defaultValue=C3 (Centro de Computo), description=, name=mon_aplicacion}, {$class=WHideParameterDefinition, defaultValue=CD, description=, name=mon_practica}, {$class=WHideParameterDefinition, defaultValue=DB, description=, name=mon_tipo}, {$class=WHideParameterDefinition, defaultValue=QA, description=, name=mon_ambiente}, {$class=ChoiceParameter, choiceType=PT_SINGLE_SELECT, description=, filterLength=1, filterable=true, name=C3_bd, randomName=UNC, script={$class=GroovyScript, fallbackScript={classpath=[], sandbox=false, script=}, script={classpath=[], sandbox=false, script=
+import groovy.json.JsonSlurper
+import groovy.transform.Field
+import jenkins.model.*
+@Field def token=""
+@Field def nexusResponse = [:]
+def responseList = []
+responseList.add('00_ZERO')
+while(token!=null){
+    request()
+  for(int i=0; i < nexusResponse.items.size();i++){
+        if(nexusResponse.items[i].group.toString().equals('QA')){
+              responseList.add(nexusResponse.items[i].version.toString())
+
+        }
+  }
+
+}
+    return responseList.sort()
+def request(){
+    if(token==""){
+        urlNexusArtifactory = "http://10.130.2.30:8081/service/rest/v1/search?sort=&repository=maven-c3-bd-release&name=C3_bd"
+    }else{
+        urlNexusArtifactory = "http://10.130.2.30:8081/service/rest/v1/search?continuationToken="+token+"&sort=&repository=maven-c3-bd-release&name=C3_bd"
+    }
+    try {
+         credentialsId = 'ugithub'
+        def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class, Jenkins.instance, null, null ).find{
+        it.id == credentialsId}
+        String userpass = creds.username.toString() + ':' + creds.password.toString();
+        String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userpass.getBytes()));
+        def http_client = new URL(urlNexusArtifactory).openConnection() as HttpURLConnection
+        http_client.setRequestProperty("Authorization", basicAuth);
+        http_client.setRequestMethod("GET");
+        http_client.connect();
+
+        if (http_client.responseCode == 200) {
+            nexusResponse = new JsonSlurper().parseText(http_client.inputStream.getText('UTF-8'))
+        } else {
+            println("HTTP response error")
+            System.exit(0)
+        }
+        if(nexusResponse.continuationToken=="null"){
+            token="null"
+
+        }else{
+            token=nexusResponse.continuationToken
+        }
+    }catch (Exception e) {
+        println(e)
+    }
+}}}}])]} for org.jenkinsci.plugins.workflow.multibranch.JobPropertyStep: java.lang.IllegalArgumentException: Could not instantiate {parameterDefinitions=[{$class=BooleanParameterDefinition, defaultValue=false, description=Opcional, name=Refresh_Parameters}, @choice(choices=[QA159, QA222, QA221, QA81, QA82, QA68, QA104, QA99],defaultValue=,description=PT Deploy,name=PT_Deploy), {$class=BooleanParameterDefinition, defaultValue=false, description=Script de cambio, name=DobleExecute}, {$class=BooleanParameterDefinition, defaultValue=false, description=¿Validar logs despuesde todas las ejecuciones?, name=validarLogsPostEjecuciones}, {$class=WHideParameterDefinition, defaultValue=Compensación y Conciliación, description=, name=mon_plataforma}, {$class=WHideParameterDefinition, defaultValue=C3 (Centro de Computo), description=, name=mon_aplicacion}, {$class=WHideParameterDefinition, defaultValue=CD, description=, name=mon_practica}, {$class=WHideParameterDefinition, defaultValue=DB, description=, name=mon_tipo}, {$class=WHideParameterDefinition, defaultValue=QA, description=, name=mon_ambiente}, {$class=ChoiceParameter, choiceType=PT_SINGLE_SELECT, description=, filterLength=1, filterable=true, name=C3_bd, randomName=UNC, script={$class=GroovyScript, fallbackScript={classpath=[], sandbox=false, script=}, script={classpath=[], sandbox=false, script=
+import groovy.json.JsonSlurper
+import groovy.transform.Field
+import jenkins.model.*
+@Field def token=""
+@Field def nexusResponse = [:]
+def responseList = []
+responseList.add('00_ZERO')
+while(token!=null){
+    request()
+  for(int i=0; i < nexusResponse.items.size();i++){
+        if(nexusResponse.items[i].group.toString().equals('QA')){
+              responseList.add(nexusResponse.items[i].version.toString())
+
+        }
+  }
+
+}
+    return responseList.sort()
+def request(){
+    if(token==""){
+        urlNexusArtifactory = "http://10.130.2.30:8081/service/rest/v1/search?sort=&repository=maven-c3-bd-release&name=C3_bd"
+    }else{
+        urlNexusArtifactory = "http://10.130.2.30:8081/service/rest/v1/search?continuationToken="+token+"&sort=&repository=maven-c3-bd-release&name=C3_bd"
+    }
+    try {
+         credentialsId = 'ugithub'
+        def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class, Jenkins.instance, null, null ).find{
+        it.id == credentialsId}
+        String userpass = creds.username.toString() + ':' + creds.password.toString();
+        String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userpass.getBytes()));
+        def http_client = new URL(urlNexusArtifactory).openConnection() as HttpURLConnection
+        http_client.setRequestProperty("Authorization", basicAuth);
+        http_client.setRequestMethod("GET");
+        http_client.connect();
+
+        if (http_client.responseCode == 200) {
+            nexusResponse = new JsonSlurper().parseText(http_client.inputStream.getText('UTF-8'))
+        } else {
+            println("HTTP response error")
+            System.exit(0)
+        }
+        if(nexusResponse.continuationToken=="null"){
+            token="null"
+
+        }else{
+            token=nexusResponse.continuationToken
+        }
+    }catch (Exception e) {
+        println(e)
+    }
+}}}}]} for hudson.model.ParametersDefinitionProperty: java.lang.UnsupportedOperationException: no known implementation of class hudson.model.ParameterDefinition is named WHideParameterDefinition
+Finished: FAILURE

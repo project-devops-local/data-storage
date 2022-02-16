@@ -1,0 +1,628 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.41">
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.BooleanParameterValue>
+          <name>Refresh_Parameters</name>
+          <description>Opcional</description>
+          <value>false</value>
+        </hudson.model.BooleanParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>PT_Deploy</name>
+          <description>PT Deploy</description>
+          <value>QA159</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.BooleanParameterValue>
+          <name>DobleExecute</name>
+          <description>Script de cambio</description>
+          <value>false</value>
+        </hudson.model.BooleanParameterValue>
+        <hudson.model.BooleanParameterValue>
+          <name>validarLogsPostEjecuciones</name>
+          <description>¿Validar logs despuesde todas las ejecuciones?</description>
+          <value>false</value>
+        </hudson.model.BooleanParameterValue>
+        <com.wangyin.parameter.WHideParameterValue plugin="hidden-parameter@0.0.4">
+          <name>mon_plataforma</name>
+          <value>Compensación y Conciliación</value>
+        </com.wangyin.parameter.WHideParameterValue>
+        <com.wangyin.parameter.WHideParameterValue plugin="hidden-parameter@0.0.4">
+          <name>mon_aplicacion</name>
+          <value>C3 (Centro de Computo)</value>
+        </com.wangyin.parameter.WHideParameterValue>
+        <com.wangyin.parameter.WHideParameterValue plugin="hidden-parameter@0.0.4">
+          <name>mon_practica</name>
+          <value>CD</value>
+        </com.wangyin.parameter.WHideParameterValue>
+        <com.wangyin.parameter.WHideParameterValue plugin="hidden-parameter@0.0.4">
+          <name>mon_tipo</name>
+          <value>DB</value>
+        </com.wangyin.parameter.WHideParameterValue>
+        <com.wangyin.parameter.WHideParameterValue plugin="hidden-parameter@0.0.4">
+          <name>mon_ambiente</name>
+          <value>QA</value>
+        </com.wangyin.parameter.WHideParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>C3_bd</name>
+          <value>UNC-273_66</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>Refresh_Parameters</string>
+        <string>PT_Deploy</string>
+        <string>DobleExecute</string>
+        <string>validarLogsPostEjecuciones</string>
+        <string>mon_plataforma</string>
+        <string>mon_aplicacion</string>
+        <string>mon_practica</string>
+        <string>mon_tipo</string>
+        <string>mon_ambiente</string>
+        <string>C3_bd</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.21">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <com.cloudbees.plugins.credentials.builds.CredentialsParameterBinder plugin="credentials@2.5">
+      <boundCredentials class="concurrent-hash-map"/>
+    </com.cloudbees.plugins.credentials.builds.CredentialsParameterBinder>
+    <org.jenkinsci.plugins.workflow.cps.EnvActionImpl plugin="workflow-cps@2.93">
+      <env class="tree-map"/>
+    </org.jenkinsci.plugins.workflow.cps.EnvActionImpl>
+    <hudson.plugins.ansicolor.action.ColorizedAction plugin="ansicolor@1.0.1">
+      <id>605b58d2-b208-42df-acc6-1a3d22e24dd4</id>
+      <colorMapName>xterm</colorMapName>
+      <command>START</command>
+    </hudson.plugins.ansicolor.action.ColorizedAction>
+    <hudson.plugins.ansicolor.action.ColorizedAction plugin="ansicolor@1.0.1">
+      <id>514312d6-ba79-475c-b25a-70f89101d9d8</id>
+      <colorMapName>xterm</colorMapName>
+      <command>CURRENT</command>
+    </hudson.plugins.ansicolor.action.ColorizedAction>
+    <hudson.plugins.ansicolor.action.ColorizedAction plugin="ansicolor@1.0.1">
+      <id>af1515e4-2531-4a46-bf55-5476f48da6a5</id>
+      <colorMapName>xterm</colorMapName>
+      <command>STOP</command>
+    </hudson.plugins.ansicolor.action.ColorizedAction>
+  </actions>
+  <queueId>52</queueId>
+  <timestamp>1644348256562</timestamp>
+  <startTime>1644348256569</startTime>
+  <result>FAILURE</result>
+  <duration>1090</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>import groovy.transform.Field
+import groovy.json.JsonSlurper
+import java.io.IOException
+import java.util.Arrays
+import java.util.ArrayList
+import java.util.Collections
+import java.util.Iterator
+import java.util.List
+
+//------------------------------INICIO VARIABLES MODIFICABLES----------------------------------------------------------
+//Variables Nexus
+@Field String defaultRepository = &apos;maven-c3-bd-release&apos;
+@Field String defaultExtension = &apos;zip&apos;
+@Field String groupId = &apos;QA&apos;
+@Field String credentialNexusId = &apos;ugithub&apos;
+@Field String credentialBD
+
+//Variables Jira
+@Field def fieldJobDeploy = &apos;customfield_14037&apos;
+@Field def transitionSuccess = &apos;41&apos;
+@Field def transitionFailed = &apos;61&apos;
+@Field def fieldErrorDeploy = &apos;customfield_14042&apos;
+@Field def credentialJiraId = &apos;userJira&apos;
+@Field def scriptName = &apos;&apos;
+
+//Variables logica
+@Field String defaultOption = &apos;00_ZERO&apos;
+@Field def labelParameters = []
+@Field def propertie = [:]
+@Field CAMBIO = &apos;true&apos;
+@Field ROLLBACK = &apos;true&apos;
+@Field SP = &apos;true&apos;
+
+@Field def infoComponents = [
+    //[&quot;componentWeblogic&quot;:[&quot;targetWeblogic&quot;,&quot;repositoryNexus&quot;,&quot;artifactIdNexus,&quot;artifactExtension&quot;]]
+    &apos;UNC&apos;:[&apos;BD&apos;, defaultRepository, &apos;C3_bd&apos;, defaultExtension]
+   // &quot;IM&quot;:[&quot;BD&quot;,defaultRepository,&quot;BD&quot;,defaultExtension]
+
+ ]
+//servidores
+@Field def servidor = [
+    // &quot;ambiente&quot;:[ip,ip-puerto,credenciales]
+    &apos;QA159&apos;:[&apos;10.130.4.159&apos;, &apos;10.130.4.159, 1440&apos;, &apos;UNICO221&apos;],
+    &apos;QA222&apos;:[&apos;10.130.4.222&apos;, &apos;10.130.4.222, 1433&apos;, &apos;UNICO221&apos;],
+    &apos;QA221&apos;:[&apos;10.130.4.221&apos;, &apos;10.130.4.221, 1433&apos;, &apos;UNICO221&apos;],
+    &apos;QA81&apos;:[&apos;10.130.4.81&apos;, &apos;10.130.4.81, 1433&apos;, &apos;UNICO221&apos;],
+    &apos;QA82&apos;:[&apos;10.130.4.82&apos;, &apos;10.130.4.82, 1433&apos;, &apos;UNICO221&apos;],
+    &apos;QA68&apos;:[&apos;10.137.0.68&apos;, &apos;10.137.0.68, 1433&apos;, &apos;UNICO221&apos;],
+    &apos;QA104&apos;:[&apos;10.130.13.104&apos;, &apos;10.130.13.104, 1456&apos;, &apos;UNICO221&apos;],
+    &apos;QA99&apos;:[&apos;10.130.1.99&apos;, &apos;10.130.1.99, 1433&apos;, &apos;UNICODBQA_2&apos;]
+
+]
+
+//Variables DB
+@Field db_server = &apos;&apos;
+@Field String ownerDbObjects = &apos;CORE_PSE_PT&apos;
+@Field String hostDB = &apos;10.130.4.197&apos;
+@Field String portDB = &apos;1528&apos;
+@Field String sidDB = &apos;ATHORA121&apos;
+
+//------------------------------INICIO VARIABLES MODIFICABLES----------------------------------------------------------
+        labelParameters.add([$class: &apos;BooleanParameterDefinition&apos;, defaultValue: false, description: &apos;Opcional&apos;, name: &apos;Refresh_Parameters&apos;])
+        labelParameters.add(choice(choices:[&apos;QA159&apos;, &apos;QA222&apos;, &apos;QA221&apos;, &apos;QA81&apos;, &apos;QA82&apos;, &apos;QA68&apos;, &apos;QA104&apos;, &apos;QA99&apos;], defaultValue: &apos;&apos;, description: &apos;PT Deploy&apos;, name: &apos;PT_Deploy&apos;))
+        labelParameters.add([$class: &apos;BooleanParameterDefinition&apos;, defaultValue: false, description: &apos;Script de cambio&apos;, name: &apos;DobleExecute&apos;])
+        labelParameters.add([$class: &apos;BooleanParameterDefinition&apos;, defaultValue: false, description: &apos;¿Validar logs despuesde todas las ejecuciones?&apos;, name: &apos;validarLogsPostEjecuciones&apos;])
+        labelParameters.add([$class: &apos;WHideParameterDefinition&apos;, defaultValue: &apos;Compensación y Conciliación&apos;, description: &apos;&apos;, name: &apos;mon_plataforma&apos;])
+        labelParameters.add([$class: &apos;WHideParameterDefinition&apos;, defaultValue: &apos;C3 (Centro de Computo)&apos;, description: &apos;&apos;, name: &apos;mon_aplicacion&apos;])
+        labelParameters.add([$class: &apos;WHideParameterDefinition&apos;, defaultValue: &apos;CD&apos;, description: &apos;&apos;, name: &apos;mon_practica&apos;])
+        labelParameters.add([$class: &apos;WHideParameterDefinition&apos;, defaultValue: &apos;DB&apos;, description: &apos;&apos;, name: &apos;mon_tipo&apos;])
+        labelParameters.add([$class: &apos;WHideParameterDefinition&apos;, defaultValue: &apos;QA&apos;, description: &apos;&apos;, name: &apos;mon_ambiente&apos;])
+        methodOrchestrator(&apos;Refresh&apos;)
+  properties([parameters(labelParameters)])
+node (&apos;master&apos;) {
+    environment { PATH = &quot;$PATH:/opt/mssql-tools/bin&quot; }
+    try {
+     
+       
+        stage(&apos;Download Artifacts Nexus&apos;) {
+            cleanWs()
+            descarga()
+        }
+
+        stage(&apos;Descomprimir DB-####.zip&apos;) {
+            descomprimir()
+            sh &apos;touch readme.txt&apos;
+            sh &quot;echo ${JOB_NAME}-${BUILD_NUMBER} &gt;&gt; readme.txt&quot;
+            sh &apos;zip LOGS-DB.zip readme.txt&apos;
+                script_list = sh (script: &apos;ls&apos;, returnStdout: true).trim()
+                script_list = script_list.split(&apos;\n&apos;)
+
+                def listaCambio = []
+                def listaBackup = []
+                def mapCambio = [:]
+                def mapBackup = [:]
+                for (archivo in script_list) {
+                if (archivo.contains(&apos;SP&apos;)) {
+                    listaCambio.add(extractInts(archivo))
+                    mapCambio.put(extractInts(archivo), archivo)
+                }
+                }
+        }
+        stage(&apos;Analisis criticidad&apos;) {
+            texto = &apos;INFO Analisis scripts &apos;
+            printm(texto)
+            if (Refresh_Parameters == &apos;false&apos;) {
+                script_list = sh (script: &apos;ls *.sql&apos;, returnStdout: true).trim().replace(&apos; &apos;, &apos;&apos;)
+                script_list = script_list.split(&apos;\n&apos;)
+
+                def listaCambio = []
+                def listaBackup = []
+                def listaReverso = []
+                def mapCambio = [:]
+                def mapBackup = [:]
+                def mapReverso = [:]
+                def scriptsbackups = []
+                def scriptsejecucion = []
+                def scriptsreverso = []
+
+                for (archivo in script_list) {
+                    if (archivo.contains(&apos;SP&apos;) &amp;&amp; SP == &apos;true&apos;) {
+                        listaBackup.add(extractInts(archivo))
+                        mapBackup.put(extractInts(archivo), archivo)
+                    }else if (archivo.contains(&apos;cambio&apos;) &amp;&amp; CAMBIO == &apos;true&apos;) {
+                        listaCambio.add(extractInts(archivo))
+                        mapCambio.put(extractInts(archivo), archivo)
+                    }else if (archivo.contains(&apos;rollback&apos;) &amp;&amp; ROLLBACK == &apos;true&apos;) {
+                        listaReverso.add(extractInts(archivo))
+                        mapReverso.put(extractInts(archivo), archivo)
+                    }
+                }
+                if (ROLLBACK == &apos;true&apos;) {
+                    for (String numerocambio in listaReverso.reverse()) {
+                        scriptsreverso = mapReverso[&quot;$numerocambio&quot;]
+                        CRITICAlANALYSYS(&quot;$scriptsreverso&quot;)
+                    }
+                }
+
+                if (CAMBIO == &apos;true&apos;) {
+                    for (String numerocambio in listaCambio.sort()) {
+                        scriptsejecucion = mapCambio[&quot;$numerocambio&quot;]
+                        CRITICAlANALYSYS(&quot;$scriptsejecucion&quot;)
+                    }
+                }
+
+                if (SP == &apos;true&apos;) {
+                    for (String numero in listaBackup.sort()) {
+                        scripts = mapBackup[&quot;$numero&quot;]
+                        CRITICAlANALYSYS(&quot;$scripts&quot;)
+                    }
+                }else {
+                    println &apos;No component selected&apos;
+                }
+            }
+        }
+
+        stage(&apos;EJECUCION&apos;) {
+            texto = &apos;INFO Ejecutando scripts &apos;
+            printm(texto)
+            if (Refresh_Parameters == &apos;false&apos;) {
+                echo PT_Deploy
+                script_list = sh (script: &apos;ls *.sql&apos;, returnStdout: true).trim().replace(&apos; &apos;, &apos;&apos;)
+                script_list = script_list.split(&apos;\n&apos;)
+                db_server = servidor.get(PT_Deploy)[1]
+                println db_server
+
+                def listaCambio = []
+                def listaBackup = []
+                def listaReverso = []
+                def mapCambio = [:]
+                def mapBackup = [:]
+                def mapReverso = [:]
+                def scriptsbackups = []
+                def scriptsejecucion = []
+                def scriptsreverso = []
+
+                for (archivo in script_list) {
+                    if (archivo.contains(&apos;SP&apos;) &amp;&amp; SP == &apos;true&apos;) {
+                        listaBackup.add(extractInts(archivo))
+                        mapBackup.put(extractInts(archivo), archivo)
+                    }else if (archivo.contains(&apos;cambio&apos;) &amp;&amp; CAMBIO == &apos;true&apos;) {
+                        listaCambio.add(extractInts(archivo))
+                        mapCambio.put(extractInts(archivo), archivo)
+                    }else if (archivo.contains(&apos;rollback&apos;) &amp;&amp; ROLLBACK == &apos;true&apos;) {
+                        listaReverso.add(extractInts(archivo))
+                        mapReverso.put(extractInts(archivo), archivo)
+                    }
+                }
+
+                if (ROLLBACK == &apos;true&apos;) {
+                    for (String numerocambio in listaReverso.reverse()) {
+                        scriptsreverso = mapReverso[&quot;$numerocambio&quot;]
+                        scripRolback(&quot;$scriptsreverso&quot;)
+                    }
+                }
+
+                if (CAMBIO == &apos;true&apos;) {
+                    for (String numerocambio in listaCambio.sort()) {
+                        scriptsejecucion = mapCambio[&quot;$numerocambio&quot;]
+                        scripEjecucion(&quot;$scriptsejecucion&quot;)
+                    }
+                }
+
+                if (SP == &apos;true&apos;) {
+                    for (String numero in listaBackup.sort()) {
+                        scripts = mapBackup[&quot;$numero&quot;]
+                        scripBackup(&quot;$scripts&quot;)
+                    }
+                }
+
+                //-----------------------Analisis de Logs Post Ejecucion-------------------//
+                if (ROLLBACK == &apos;true&apos;) {
+                    if (validarLogsPostEjecuciones == &apos;true&apos;) {
+                        for (String numerocambio in listaReverso.sort()) {
+                            scriptsreverso = mapReverso[&quot;$numerocambio&quot;]
+                            AnalisisLogs(&quot;$scriptsreverso&quot;)
+                        }
+                    }
+                }
+
+                if (CAMBIO == &apos;true&apos;) {
+                    if (validarLogsPostEjecuciones == &apos;true&apos;) {
+                        for (String numerocambio in listaCambio.sort()) {
+                            scriptsejecucion = mapCambio[&quot;$numerocambio&quot;]
+                            AnalisisLogs(&quot;$scriptsejecucion&quot;)
+                        }
+                    }
+                }
+
+                if (SP == &apos;true&apos;) {
+                    if (validarLogsPostEjecuciones == &apos;true&apos;) {
+                        for (String numero in listaBackup.sort()) {
+                            scripts = mapBackup[&quot;$numero&quot;]
+                            AnalisisLogs(&quot;$scripts&quot;)
+                        }
+                    }
+                }else {
+                    println &apos;No component selected&apos;
+                }
+            }
+        }
+        stage(&apos;Envio Resultado&apos;) {
+            if (Refresh_Parameters == &apos;false&apos;) {
+                NOTIFICATION(&apos;LOGS-DB.zip&apos;, &apos;SUCCESS&apos;)
+                UploadNexus()
+            }else {
+                println &apos;No component selected&apos;
+            }
+        }
+    }catch (Exception errorTotal) {
+        //cleanWs()
+        error (errorTotal.toString())
+    }
+}
+
+String scriptGetVersionsNexus(String repository, String groupId, String artifactId) {
+    String script =&quot;&quot;&quot;
+import groovy.json.JsonSlurper
+import groovy.transform.Field
+import jenkins.model.*
+@Field def token=&quot;&quot;
+@Field def nexusResponse = [:]
+def responseList = []
+responseList.add(&apos;${defaultOption}&apos;)
+while(token!=null){
+    request()
+  for(int i=0; i &lt; nexusResponse.items.size();i++){
+        if(nexusResponse.items[i].group.toString().equals(&apos;${groupId}&apos;)){
+              responseList.add(nexusResponse.items[i].version.toString())
+
+        }
+  }
+
+}
+    return responseList.sort()
+def request(){
+    if(token==&quot;&quot;){
+        urlNexusArtifactory = &quot;${urlNexus}/service/rest/v1/search?sort=&amp;repository=${repository}&amp;name=${artifactId}&quot;
+    }else{
+        urlNexusArtifactory = &quot;${urlNexus}/service/rest/v1/search?continuationToken=&quot;+token+&quot;&amp;sort=&amp;repository=${repository}&amp;name=${artifactId}&quot;
+    }
+    try {
+         credentialsId = &apos;${credentialNexusId}&apos;
+        def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.common.StandardUsernameCredentials.class, Jenkins.instance, null, null ).find{
+        it.id == credentialsId}
+        String userpass = creds.username.toString() + &apos;:&apos; + creds.password.toString();
+        String basicAuth = &quot;Basic &quot; + new String(Base64.getEncoder().encode(userpass.getBytes()));
+        def http_client = new URL(urlNexusArtifactory).openConnection() as HttpURLConnection
+        http_client.setRequestProperty(&quot;Authorization&quot;, basicAuth);
+        http_client.setRequestMethod(&quot;GET&quot;);
+        http_client.connect();
+
+        if (http_client.responseCode == 200) {
+            nexusResponse = new JsonSlurper().parseText(http_client.inputStream.getText(\&apos;UTF-8\&apos;))
+        } else {
+            println(&quot;HTTP response error&quot;)
+            System.exit(0)
+        }
+        if(nexusResponse.continuationToken==&quot;null&quot;){
+            token=&quot;null&quot;
+
+        }else{
+            token=nexusResponse.continuationToken
+        }
+    }catch (Exception e) {
+        println(e)
+    }
+}&quot;&quot;&quot;
+    return script
+}
+//----------------Metodos-----------------////
+
+def methodOrchestrator(String operation) {
+    withCredentials([usernamePassword(credentialsId: credentialNexusId, usernameVariable: &apos;userNexus&apos;, passwordVariable: &apos;passNexus&apos;)]) {
+        for (def infoComponent in infoComponents) {
+            String[] arrayInfo = infoComponent.toString().split(&apos;=&apos;)
+            String component = arrayInfo[0]
+            String repository = infoComponents.get(component)[1]
+            String artifactId = infoComponents.get(component)[2]
+            if (!artifactId) {
+                artifactId = component
+            }
+            String extension = infoComponents.get(component)[3]
+
+            if (operation.equals(&apos;Refresh&apos;)) {
+                String scriptVersion = scriptGetVersionsNexus(repository, groupId, artifactId)
+                labelParameters.add([$class: &apos;ChoiceParameter&apos;, choiceType: &apos;PT_SINGLE_SELECT&apos;, description: &apos;&apos;, filterLength: 1, filterable: true, name: &apos;C3_bd&apos;, randomName: component, script: [$class: &apos;GroovyScript&apos;, fallbackScript: [classpath: [], sandbox: false, script: &apos;&apos;], script: [classpath: [], sandbox: false, script: scriptVersion]]])
+                }else {
+                //if (params.&quot;$component&quot; &amp;&amp; params.&quot;$component&quot; !=&quot;&quot; &amp;&amp; params.&quot;$component&quot; !=defaultOption) {
+                String version = params.&quot;$component&quot;
+                if (version != defaultOption) {
+                    String urlArtifact = &quot;${urlNexus}/repository/${repository}/${groupId}/${artifactId}/${version}/${artifactId}-${version}.${extension}&quot;
+                    def tempArtifact = urlArtifact.split(&apos;/&apos;)
+                    String artifact = tempArtifact[tempArtifact.size() - 1]
+                    String downloadArtifactScript = &quot;curl -u ${userNexus}:${passNexus} -k -o ${artifact} ${urlArtifact}&quot;
+                    downloadScript = &quot;${downloadScript}\n${downloadArtifactScript}&quot;
+                }
+
+            //}
+            }
+        }
+    }
+}
+
+def descarga() {
+    texto = &apos;INFO Descargando ####.zip de scripts&apos;
+    printm(texto)
+    if (Refresh_Parameters == &apos;false&apos;) {
+        withCredentials([usernamePassword(credentialsId: &apos;ugithub&apos;, usernameVariable: &apos;USERNAME&apos;, passwordVariable: &apos;PASSWORD&apos;)]) {
+                sh label: &apos;&apos;, script: &apos;curl -X GET -u ${USERNAME}:${PASSWORD} https://devops-nexus.ath.net/repository/maven-c3-bd-release/QA/C3_bd/${C3_bd}/C3_bd-${C3_bd}.zip -O&apos;
+        }
+
+        }else {
+        println &apos;No component selected&apos;
+    }
+}
+
+def descomprimir() {
+    texto = &apos;INFO Descomprimiendo ####.zip de scripts&apos;
+    printm(texto)
+    if (Refresh_Parameters == &apos;false&apos;) {
+        sh &quot;jar xvf C3_bd-${C3_bd}.zip&quot;
+    }else {
+        println &apos;No component selected&apos;
+    }
+}
+def scripBackup(scriptName) {
+    texto = &apos;INFO Ejecutando script de Backup&apos;
+    printm(texto)
+    script = &quot;$scriptName&quot;
+    if (validarLogsPostEjecuciones == &apos;true&apos;) {
+        texto = &apos;[INFO] Se analizara el log de los scripts despues de realizar todas las ejecuciones.&apos;
+        printm(texto)
+        SQL(script)
+        }else {
+        texto = &apos;[INFO] Buscando errores en el script ejecutado&apos;
+        printm(texto)
+        SQL(script)
+        AnalisisLogs(scriptName)
+    }
+
+}
+def scripEjecucion(scriptName) {
+    texto = &apos;INFO Ejecutando script de Ejecucion&apos;
+    printm(texto)
+    script = &quot;$scriptName&quot;
+    if (validarLogsPostEjecuciones == &apos;true&apos;) {
+        texto = &apos;[INFO] Se analizara el log de los scripts despues de realizar todas las ejecuciones.&apos;
+        printm(texto)
+        SQL(script)
+        }else {
+        texto = &apos;[INFO] Buscando errores en el script ejecutado&apos;
+        printm(texto)
+        SQL(script)
+        AnalisisLogs(scriptName)
+    }
+}
+
+def scripRolback(scriptName) {
+    texto = &apos;INFO Ejecutando script de RollBack &apos;
+    printm(texto)
+    script = &quot;$scriptName&quot;
+    if (validarLogsPostEjecuciones == &apos;true&apos;) {
+        texto = &apos;[INFO] Se analizara el log de los scripts despues de realizar todas las ejecuciones.&apos;
+        printm(texto)
+        SQL(script)
+        }else {
+        texto = &apos;[INFO] Buscando errores en el script ejecutado&apos;
+        printm(texto)
+        SQL(script)
+        AnalisisLogs(scriptName)
+    }
+}
+
+def SQL(scriptName) {
+    credentialBD = servidor.get(PT_Deploy)[2]
+    println credentialBD
+
+    withCredentials([usernamePassword(credentialsId: credentialBD, usernameVariable: &apos;USERNAME&apos;, passwordVariable: &apos;PASSWORD&apos;)]) {
+                //sh &quot;&quot;&quot;sed -i &apos;1i ALTER SESSION SET CURRENT_SCHEMA=${ownerDbObjects};&apos; ${scriptName}&quot;&quot;&quot;
+                //sh &quot;&quot;&quot;sed -i &apos;1i set timing on&apos; ${scriptName}&quot;&quot;&quot;
+                //sh &quot;&quot;&quot;sed -i &apos;1i set echo on&apos; ${scriptName}&quot;&quot;&quot;
+                //sh &quot;&quot;&quot; sqlplus &apos;${USERNAME}/${PASSWORD}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=${hostDB})(Port=${portDB}))(CONNECT_DATA=(SID=${sidDB})))&apos; @${scriptName} |tee -a ${scriptName}.log
+                //&quot;&quot;&quot;
+
+                sh &quot;/opt/mssql-tools/bin/sqlcmd -U ${USERNAME} -P ${PASSWORD} -S ${db_server} -i ${scriptName} -f 65001 |tee -a ${scriptName}.log&quot;
+    }
+}
+
+def CRITICAlANALYSYS(scriptName) {
+    //Palabras entregadas por el area de DB
+    def DICCIONARIO = []
+    //DICCIONARIO = [&quot;DROP&quot;]
+    DICCIONARIO = [&apos;&apos;]
+    //--------------------------------------
+
+    for (def palabra in DICCIONARIO) {
+        sh &quot;&quot;&quot;grep -i -w ${palabra} ${scriptName} |tee -a analisis${scriptName}.log&quot;&quot;&quot;
+    }
+    file = &apos;analisis&apos; + scriptName + &apos;.log&apos;
+    def hostsAlias
+    hostsAlias = readFile(file).trim()
+    println hostsAlias
+    if (hostsAlias.size() != 0) {
+        error(&quot;[ERROR] Se encontro una linea critica, por favor Validar el script: ${scriptName}&quot;)
+    }
+}
+
+def NOTIFICATION(logName, resultado) {
+    emailext attachLog: true, attachmentsPattern: &quot;${logName}&quot;, body:&apos;&apos;&apos;${SCRIPT, template=&quot;groovy-html.template&quot;}&apos;&apos;&apos;, subject: &quot;${JOB_NAME} # ${BUILD_NUMBER} # ${resultado} &quot;, to: &apos;prv_karodriguez@ath.com.co,prv_emontanez@ath.com.co,prv_dbarahona@ath.com.co,prv_fvargas@ath.com.co,despliegue_backoffice@ath.com.co&apos;
+}
+
+def printm(message) {
+    ansiColor(&apos;xterm&apos;) {
+        def color = &apos;46m&apos;
+            echo &quot;\033[${color}******************** ${message} ********************\033[0m&quot;
+    }
+}
+
+def UploadNexus() {
+    withCredentials([usernamePassword(credentialsId: &apos;ugithub&apos;, usernameVariable: &apos;USERNAME&apos;, passwordVariable: &apos;PASSWORD&apos;)]) {
+                sh label: &apos;&apos;, script: &quot;curl -u ${USERNAME}:${PASSWORD} -k -X POST &apos;https://devops-nexus.ath.net/service/rest/v1/components?repository=maven-c3-bd-release&apos; -H &apos;accept: application/json&apos; -H &apos;Content-Type: multipart/form-data&apos; -F maven2.groupId=LOGS-DB -F maven2.artifactId=LOGS-DB -F maven2.version=${C3_bd} -F maven2.generate-pom=false -F &apos;maven2.asset1=@LOGS-DB.zip;type=application/x-zip-compressed&apos; -F maven2.asset1.extension=zip&quot;
+    }
+}
+String extractInts( String input ) {
+    def value
+    value = input.findAll( /\d+/ )
+    return value.toString().replace(&apos;[&apos;, &apos;&apos;).replace(&apos;]&apos;, &apos;&apos;)
+}
+def AnalisisLogs(scriptName) {
+    texto = &apos;[INFO] Ejecutando analisis de log generado: &apos; + scriptName + &apos;.log&apos;
+    printm(texto)
+    def ERRORES = []
+    //ERRORES = [&quot;ORA-&quot;,&quot;SP2-&quot;]
+    ERRORES = [&apos;Error al ejecutar Script&apos;, &apos;Msg&apos;]
+    for (def palabra in ERRORES) {
+        sh &quot;&quot;&quot;grep ${palabra} ${scriptName}.log |tee -a error_${scriptName}.log&quot;&quot;&quot;
+    }
+    fileError = &apos;error_&apos; + scriptName + &apos;.log&apos;
+    def hostsAliasError = readFile(fileError).trim()
+    if (hostsAliasError.size() != 0) {
+        sh &quot;zip error_${scriptName}.log.zip ${scriptName}.log&quot;
+        NOTIFICATION(&quot;error_${scriptName}.log.zip&quot;, &apos;FAILED&apos;)
+        error(&quot;[ERROR] Genero error el script: ${scriptName}&quot;)
+                }else {
+        sh &quot;zip -u LOGS-DB.zip ${scriptName}.log&quot;
+    }
+}
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>209947600</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>121807400</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>409240000</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>159938200</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>43824100</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>28</iota>
+    <head>1:28</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>
